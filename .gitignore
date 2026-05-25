@@ -39,15 +39,17 @@ embeddings/
 # AGENT DATA (LOCAL STATE)
 # =========================
 
+# Ignore all user data but keep folder
+data/*
+!data/.gitkeep
+
+# (Optional) allow versioned examples
+# !data/sample/
+
 # Persistent memory
 memory/
 agent_memory/
 long_term_memory/
-
-# User documents (ingestion)
-data/
-documents/
-ingestion/
 
 # Agent outputs
 outputs/
