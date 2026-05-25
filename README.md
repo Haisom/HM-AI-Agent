@@ -10,6 +10,7 @@ a first-class infrastructure concern:
 
 ```text
 HM-AI-Agent/
+|-- main.py
 |-- src/
 |   |-- domain/              # Core business rules and models
 |   |-- application/         # Use cases and orchestration
@@ -17,7 +18,8 @@ HM-AI-Agent/
 |   |   |-- ai/              # Model providers and LLM clients
 |   |   |-- github/          # GitHub adapters
 |   |   |-- mcp/             # MCP client, tools, and server adapters
-|   |   `-- persistence/     # Storage, memory, and state adapters
+|   |   |-- persistence/     # Storage, memory, and state adapters
+|   |   `-- tools/           # Internal utility adapters and helpers
 |   |-- interfaces/          # User and system entry points
 |   |   |-- cli/
 |   |   |-- http/
