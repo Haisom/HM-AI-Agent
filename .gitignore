@@ -96,6 +96,10 @@ executions/
 .cache/
 *.cache
 
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+
 # =========================
 # FRONTEND (if applicable)
 # =========================
