@@ -99,6 +99,10 @@ executions/
 # Python bytecode cache
 __pycache__/
 *.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
 
 # =========================
 # FRONTEND (if applicable)

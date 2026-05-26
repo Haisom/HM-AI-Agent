@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "mcp-brasil": {
+      "command": "uvx",
+      "args": ["--from", "mcp-brasil", "python", "-m", "mcp_brasil.server"]
+    }
+  }
+}
