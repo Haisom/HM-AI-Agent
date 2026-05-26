@@ -10,7 +10,10 @@ a first-class infrastructure concern:
 
 ```text
 HM-AI-Agent/
+|-- pyproject.toml
 |-- main.py
+|-- .vscode/
+|   `-- mcp.json          # Local MCP client config for VS Code/Cursor
 |-- src/
 |   |-- domain/              # Core business rules and models
 |   |-- application/         # Use cases and orchestration
@@ -37,6 +40,7 @@ HM-AI-Agent/
 |   `-- e2e/
 |-- scripts/
 |-- docs/
+|   `-- mcp-brasil.md
 |-- data/
 |-- .env.example
 `-- README.md
@@ -55,9 +59,29 @@ HM-AI-Agent/
 - `shared` is for genuinely reusable utilities. Prefer keeping code near its
   owning layer until it is clearly shared.
 
+## MCP Brasil
+
+The project includes a Python integration for
+[Mcp-Brasil/mcp-brasil](https://github.com/Mcp-Brasil/mcp-brasil), an external
+MCP server for Brazilian public data sources.
+
+Install project dependencies:
+
+```bash
+uv sync
+```
+
+The MCP server is registered in `src/infrastructure/mcp/servers.py` and can be
+launched by MCP clients with:
+
+```bash
+uvx --from mcp-brasil python -m mcp_brasil.server
+```
+
+VS Code/Cursor can use the checked-in `.vscode/mcp.json`. Optional API keys and
+dataset settings are documented in `.env.example` and `docs/mcp-brasil.md`.
+
 ## Next Step
 
-Choose the implementation stack before adding package metadata:
-
-- Python: add `pyproject.toml` and package code under `src/`.
-- TypeScript/Node: add `package.json` and keep app code under `src/`.
+Build the application-level MCP client that starts configured servers, discovers
+their tools, and adapts tool calls into agent use cases.
